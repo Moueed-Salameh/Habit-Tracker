@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coding Habit Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles.css"/>
+</head>
+<body>
+    <div class="container"> 
+        <h1>Current Graph</h1>
+        <img src="https://pixe.la/v1/users/jetstreak23/graphs/graph1"/>
+        <form id="hours_form" method="POST" action="{{ url_for('home') }}" novalidate>
+            {{ form.csrf_token }}
+            {{ form.hours.label(id="prompt") }}
+            {{ form.hours(id="hours_input", placeholder="Only values between 0 and 24") }}
+            {{ form.submit }}
+        </form>
+    </div>
+</body>
+</html>
